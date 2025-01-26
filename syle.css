@@ -1,0 +1,159 @@
+/* Corrected filename to styles.css */
+:root {
+    --primary-color: #003366;
+    --accent-color: #FFD700;
+    --text-dark: #2c3e50;
+    --gradient-blue: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+}
+
+/* Improved Navbar */
+.navbar {
+    background: var(--gradient-blue);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 150px;
+    transition: transform 0.3s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--gradient-blue);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 1rem 0;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Enhanced Mission Section */
+.mission {
+    background: var(--gradient-blue);
+    color: white;
+    padding: 4rem 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    margin-top: 80px;
+}
+
+.mission h2 {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    font-size: 3rem;
+    color: var(--accent-color);
+}
+
+/* Improved Cards */
+.realnotice div {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.realnotice div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Gallery Enhancements */
+.gallery-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.dots-container {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: var(--accent-color);
+}
+
+/* Add hover effect to footer */
+.footer a {
+    position: relative;
+    padding: 0 5px;
+}
+
+.footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-color);
+    transition: width 0.3s;
+}
+
+.footer a:hover::after {
+    width: 100%;
+}
